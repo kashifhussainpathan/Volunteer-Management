@@ -14,7 +14,9 @@ const Navbar = () => {
           href="https://github.com/kashifhussainpathan/Volunteer-Management"
           target="_blank"
           rel="noopener noreferrer"
-        ></a>
+        >
+          Github
+        </a>
       </div>
     </div>
   );
