@@ -5,8 +5,8 @@
 
   color-scheme: light dark;
   --text-color: rgba(255, 255, 255, 0.87);
-  --background-color: #0f172a;
-  --primary-color: #0f172a;
+  --background-color: #020617;
+  --primary-color: #1e293b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,6 +26,7 @@ a:hover {
 
 body {
   margin: 0;
+  background-color: var(--background-color);
 }
 
 h1 {
@@ -40,7 +41,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--background-color);
   cursor: pointer;
   transition: border-color 0.25s;
   border: 1px solid var(--text-color);
@@ -83,13 +84,13 @@ form button {
 }
 
 table {
-  border: 1px solid var(--text-color);
+  border: 2px solid var(--text-color);
   border-collapse: collapse;
 }
 
 th {
   padding: 0.5rem;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--background-color);
   background-color: var(--text-color);
   color: var(--background-color);
 }
