@@ -10,12 +10,17 @@ const initialState = {
   events: [],
   status: "idle",
   error: null,
+  showEventForm: false,
 };
 
 const eventsSlice = createSlice({
   name: "events",
   initialState,
-  reducers: {},
+  reducers: {
+    setShowEventForm: (state, action) => {
+      state.showEventForm = action.payload;
+    },
+  },
   extraReducers: {
     [fetchEvents.pending]: (state) => {
       state.status = "loading";
@@ -74,5 +79,7 @@ const eventsSlice = createSlice({
     },
   },
 });
+
+export const { setShowEventForm } = eventsSlice.actions;
 
 export default eventsSlice.reducer;

@@ -15,7 +15,7 @@ const VolunteerForm = () => {
   const { state } = useLocation();
 
   const { events } = useSelector(({ events }) => events);
-  console.log(events);
+
   const volunteer = state ? state : null;
 
   const [volunteerInput, setVolunteerInput] = useState({
@@ -62,6 +62,7 @@ const VolunteerForm = () => {
     <div className="page">
       <h2>{volunteer ? "Edit" : "Add"} Volunteer</h2>
       <form onSubmit={handleSubmit}>
+        <label>Volunteer Name:</label>
         <input
           placeholder="Enter Name"
           type="text"
@@ -74,7 +75,7 @@ const VolunteerForm = () => {
           }
           required
         />
-        <strong>Contact: </strong>
+        <label>Contact: </label>
         <input
           placeholder="Contact"
           type="number"
@@ -88,7 +89,7 @@ const VolunteerForm = () => {
           }
           required
         />
-        <strong>Skills:</strong>
+        <label>Skills:</label>
         <input
           placeholder="Separated by commas"
           type="text"
@@ -101,7 +102,7 @@ const VolunteerForm = () => {
           }
           required
         />
-        <strong>Availability: </strong>
+        <label>Availability: </label>
         <input
           type="radio"
           name="availability"
@@ -129,7 +130,7 @@ const VolunteerForm = () => {
           }
         />{" "}
         No
-        <strong>Areas of Interest: </strong>
+        <label>Areas of Interest: </label>
         <input
           placeholder="Separated by commas"
           type="text"
@@ -142,7 +143,7 @@ const VolunteerForm = () => {
           }
           required
         />
-        <strong>Events: </strong>
+        <label>Events: </label>
         {events.map(({ _id, name }) => (
           <label key={_id}>
             <input

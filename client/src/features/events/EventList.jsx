@@ -3,13 +3,15 @@ import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const EventList = () => {
-  const { events } = useSelector(({ events }) => events);
   const navigate = useNavigate();
+  const { events, showEventForm } = useSelector(({ events }) => events);
+
+  const handleShowEventForm = () => {};
 
   return (
-    <div className="page">
+    <div>
       <h2>Events View</h2>
-      <button onClick={() => navigate("/events/add")}>Add Event</button>
+      <button onClick={handleShowEventForm}>Add Event</button>
       <table>
         <tbody>
           <tr>

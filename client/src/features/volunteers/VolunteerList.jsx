@@ -32,8 +32,8 @@ const VolunteerList = () => {
             <th>Areas of Interest</th>
             <th>Events</th>
           </tr>
-          {volunteers.map(
-            ({
+          {volunteers.map((volunteer) => {
+            const {
               _id,
               name,
               contact,
@@ -41,41 +41,66 @@ const VolunteerList = () => {
               availability,
               areasOfInterest,
               events,
-            }) => (
+            } = volunteer;
+            return (
               <tr key={_id} className="nav-items">
                 <td>
-                  <NavLink className="nav-items" to={`/volunteers/${_id}`}>
+                  <NavLink
+                    className="nav-items"
+                    to={`/volunteers/${_id}`}
+                    state={volunteer}
+                  >
                     {name}
                   </NavLink>
                 </td>
                 <td>
-                  <NavLink className="nav-items" to={`/volunteers/${_id}`}>
+                  <NavLink
+                    className="nav-items"
+                    to={`/volunteers/${_id}`}
+                    state={volunteer}
+                  >
                     {contact}
                   </NavLink>
                 </td>
                 <td>
-                  <NavLink className="nav-items" to={`/volunteers/${_id}`}>
+                  <NavLink
+                    className="nav-items"
+                    to={`/volunteers/${_id}`}
+                    state={volunteer}
+                  >
                     {availability ? "Yes" : "No"}
                   </NavLink>
                 </td>
                 <td>
-                  <NavLink className="nav-items" to={`/volunteers/${_id}`}>
+                  <NavLink
+                    className="nav-items"
+                    to={`/volunteers/${_id}`}
+                    state={volunteer}
+                  >
                     {skills.join(", ")}
                   </NavLink>
                 </td>
                 <td>
-                  <NavLink className="nav-items" to={`/volunteers/${_id}`}>
+                  <NavLink
+                    className="nav-items"
+                    to={`/volunteers/${_id}`}
+                    state={volunteer}
+                  >
                     {areasOfInterest.join(", ")}
                   </NavLink>
                 </td>
                 <td>
-                  <NavLink className="nav-items" to={`/volunteers/${_id}`}>
+                  <NavLink
+                    className="nav-items"
+                    to={`/volunteers/${_id}`}
+                    state={volunteer}
+                  >
                     {events.map(({ name }) => name).join(", ")}
                   </NavLink>
                 </td>
               </tr>
-            )
-          )}
+            );
+          })}
         </tbody>
       </table>
     </div>

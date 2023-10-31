@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import EventList from "../../features/events/EventList";
 import { useDispatch, useSelector } from "react-redux";
+import EventList from "../../features/events/EventList";
 import { fetchEvents } from "../../features/events/eventApi";
 
 const EventView = () => {
