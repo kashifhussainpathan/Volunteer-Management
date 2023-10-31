@@ -1,0 +1,42 @@
+[
+  {
+    "name": "John Doe",
+    "contact": 9876543210,
+    "skills": ["JavaScript", "HTML", "CSS", "Python"],
+    "availability": true,
+    "areasOfInterest": ["Web Development", "Data Science"],
+    "events": ["65329b0007b3ce116f982191"]
+  },
+  {
+    "name": "Jane Smith",
+    "contact": 9876543211,
+    "skills": ["Java", "C++", "SQL"],
+    "availability": true,
+    "areasOfInterest": ["Software Engineering", "Artificial Intelligence"],
+    "events": ["65329b0007b3ce116f982191"]
+  },
+  {
+    "name": "Alex Johnson",
+    "contact": 9876543212,
+    "skills": ["Photoshop", "Illustrator", "InDesign"],
+    "availability": false,
+    "areasOfInterest": ["Graphic Design", "User Interface Design"],
+    "events": ["65329ab6f56fadbec55775e1", "65329b0007b3ce116f982191"]
+  },
+  {
+    "name": "Sarah Brown",
+    "contact": 9876543213,
+    "skills": ["Marketing", "Social Media Management", "SEO"],
+    "availability": true,
+    "areasOfInterest": ["Digital Marketing", "Content Creation"],
+    "events": ["65329ab7f56fadbec55775e4"]
+  },
+  {
+    "name": "Michael Lee",
+    "contact": 9876543214,
+    "skills": ["Java", "Python", "Machine Learning"],
+    "availability": false,
+    "areasOfInterest": ["Data Science", "Artificial Intelligence"],
+    "events": ["65329b0407b3ce116f982194"]
+  }
+]
