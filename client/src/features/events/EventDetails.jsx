@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import EventForm from "./EventForm";
 import { deleteEventAsync } from "./eventApi";
-import { setShowEventForm } from "./eventSlice";
+import { setShowEventForm } from "./EventSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const EventDetails = () => {
