@@ -4,7 +4,7 @@ import React from "react";
 const Home = () => {
   return (
     <div className="home">
-      <h1>Volunteer Management</h1>
+      <h1>Event Management</h1>
     </div>
   );
 };
