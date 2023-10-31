@@ -37,7 +37,6 @@ const VolunteerForm = () => {
         })
       );
       dispatch(setShowVolunteerForm(false));
-      navigate(`/volunteers/${volunteer._id}`);
     } else {
       dispatch(
         addVolunteerAsync({

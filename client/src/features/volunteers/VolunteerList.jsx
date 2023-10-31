@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
+import VolunteerForm from "./VolunteerForm";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowVolunteerForm } from "./volunteerSlice";
-import VolunteerForm from "./VolunteerForm";
 
 const VolunteerList = () => {
   const dispatch = useDispatch();
