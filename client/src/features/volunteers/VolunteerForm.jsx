@@ -46,8 +46,8 @@ const VolunteerForm = () => {
             : events[0]._id,
         })
       );
-      navigate("/");
     }
+    navigate("/volunteers");
   };
 
   const hideVolunteerFormHandler = () => {

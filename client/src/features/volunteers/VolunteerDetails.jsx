@@ -11,7 +11,9 @@ const VolunteerDetails = () => {
   const navigate = useNavigate();
   const { volunteerId } = useParams();
 
-  const { showVolunteerForm } = useSelector(({ volunteers }) => volunteers);
+  const { showVolunteerForm, status } = useSelector(
+    ({ volunteers }) => volunteers
+  );
   const volunteer = useSelector((state) =>
     state.volunteers.volunteers.find(
       (volunteer) => volunteer._id === volunteerId
@@ -47,22 +49,26 @@ const VolunteerDetails = () => {
 
       <div>
         <h2>Volunteer Details</h2>
-        <ul>
-          <li>Name: {volunteer.name}</li>
-          <li>Contact: {volunteer.contact}</li>
-          <li>Skills: {volunteer.skills.join(", ")}</li>
-          <li>
-            Availability:{" "}
-            {volunteer.availability ? "Available" : "Not Available"}
-          </li>
-          <li>Areas of Interest: {volunteer.areasOfInterest.join(", ")}</li>
-          <ol>
-            Events:{" "}
-            {volunteer.events.map(({ _id, name }) => (
-              <li key={_id}>{name} </li>
-            ))}
-          </ol>
-        </ul>
+        {status === "loading" ? (
+          <p>loading...</p>
+        ) : (
+          <ul>
+            <li>Name: {volunteer.name}</li>
+            <li>Contact: {volunteer.contact}</li>
+            <li>Skills: {volunteer.skills.join(", ")}</li>
+            <li>
+              Availability:{" "}
+              {volunteer.availability ? "Available" : "Not Available"}
+            </li>
+            <li>Areas of Interest: {volunteer.areasOfInterest.join(", ")}</li>
+            <ol>
+              Events:{" "}
+              {volunteer.events.map(({ _id, name }) => (
+                <li key={_id}>{name} </li>
+              ))}
+            </ol>
+          </ul>
+        )}
 
         <div className="volunteer-details-buttons">
           <button onClick={() => navigate("/volunteers")}>Go Back</button>
