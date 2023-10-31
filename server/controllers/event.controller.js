@@ -48,7 +48,9 @@ const addEvent = async (event) => {
 
 const editEvent = async (eventId, editedEvent) => {
   try {
-    const updatedEvent = await Event.findByIdAndUpdate(eventId, editedEvent);
+    const updatedEvent = await Event.findByIdAndUpdate(eventId, editedEvent, {
+      new: true,
+    });
     if (updatedEvent) {
       console.log("Event updated successfully:", updatedEvent);
       return updatedEvent;

@@ -32,28 +32,44 @@ const VolunteerDetails = () => {
   }
 
   return (
-    <div>
-      {showVolunteerForm ? <VolunteerForm /> : ""}
+    <div className="volunteer-details-container">
+      {showVolunteerForm && (
+        <div>
+          <div
+            className="overlay"
+            onClick={() => dispatch(setShowVolunteerForm(false))}
+          ></div>
+          <div className="modal">
+            <VolunteerForm />
+          </div>
+        </div>
+      )}
 
-      <h2>Volunteer Details</h2>
-      <ul>
-        <li>Name: {volunteer.name}</li>
-        <li>Contact: {volunteer.contact}</li>
-        <li>Skills: {volunteer.skills.join(", ")}</li>
-        <li>
-          Availability: {volunteer.availability ? "Available" : "Not Available"}
-        </li>
-        <li>Areas of Interest: {volunteer.areasOfInterest.join(", ")}</li>
-        <ol>
-          Events:{" "}
-          {volunteer.events.map(({ _id, name }) => (
-            <li key={_id}>{name} </li>
-          ))}
-        </ol>
-      </ul>
-      <button onClick={() => navigate("/volunteers")}>Go Back</button>
-      <button onClick={handleDeleteVolunteer}>Delete Volunteer</button>
-      <button onClick={handleEditVolunteerClick}>Edit Volunteer</button>
+      <div>
+        <h2>Volunteer Details</h2>
+        <ul>
+          <li>Name: {volunteer.name}</li>
+          <li>Contact: {volunteer.contact}</li>
+          <li>Skills: {volunteer.skills.join(", ")}</li>
+          <li>
+            Availability:{" "}
+            {volunteer.availability ? "Available" : "Not Available"}
+          </li>
+          <li>Areas of Interest: {volunteer.areasOfInterest.join(", ")}</li>
+          <ol>
+            Events:{" "}
+            {volunteer.events.map(({ _id, name }) => (
+              <li key={_id}>{name} </li>
+            ))}
+          </ol>
+        </ul>
+
+        <div className="volunteer-details-buttons">
+          <button onClick={() => navigate("/volunteers")}>Go Back</button>
+          <button onClick={handleDeleteVolunteer}>Delete Volunteer</button>
+          <button onClick={handleEditVolunteerClick}>Edit Volunteer</button>
+        </div>
+      </div>
     </div>
   );
 };

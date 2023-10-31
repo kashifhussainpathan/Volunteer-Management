@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const BASE_URL = "http://localhost:4000/event";
+const BASE_URL = "https://volunteer-management-qrrv.onrender.com/event";
 
 export const fetchEvents = createAsyncThunk("events/fetchEvents", async () => {
   const response = await axios.get(BASE_URL);
@@ -19,6 +19,7 @@ export const addEventAsync = createAsyncThunk(
 export const updateEventAsync = createAsyncThunk(
   "events/updateEventAsync",
   async ({ id, updatedEvent }) => {
+    // await axios.put(`${BASE_URL}/${id}`, updatedEvent);
     const response = await axios.put(`${BASE_URL}/${id}`, updatedEvent);
     return response.data.event;
   }

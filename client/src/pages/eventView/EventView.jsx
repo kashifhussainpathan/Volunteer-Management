@@ -1,3 +1,4 @@
+import "./event.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import EventList from "../../features/events/EventList";
@@ -14,7 +15,7 @@ const EventView = () => {
   }, [status, dispatch]);
 
   return (
-    <div>
+    <div className="event">
       <EventList />
     </div>
   );

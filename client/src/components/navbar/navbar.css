@@ -1,0 +1,19 @@
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0 8rem;
+  background-color: var(--primary-color);
+}
+
+.navbar a {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.navbar_utils {
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}

@@ -1,0 +1,26 @@
+.volunteer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.volunteer-details {
+  text-align: center;
+}
+
+.add-Volunteer {
+  margin-bottom: 1.5rem;
+}
+
+.volunteer-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.volunteer-details-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

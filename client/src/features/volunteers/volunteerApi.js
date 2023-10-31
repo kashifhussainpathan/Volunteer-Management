@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const BASE_URL = "http://localhost:4000/volunteer";
+const BASE_URL = "https://volunteer-management-qrrv.onrender.com/volunteer";
 
 export const fetchVolunteers = createAsyncThunk(
   "volunteers/fetchVolunteers",
@@ -22,7 +22,9 @@ export const addVolunteerAsync = createAsyncThunk(
 export const updateVolunteerAsync = createAsyncThunk(
   "volunteers/updateVolunteerAsync",
   async ({ id, updatedVolunteer }) => {
-    const response = await axios.put(`${BASE_URL}/${id}`, updatedVolunteer);
+    // await axios.post(`${BASE_URL}/${id}`, updatedVolunteer);
+    const response = await axios.post(`${BASE_URL}/${id}`, updatedVolunteer);
+    console.log(response.data.volunteer);
     return response.data.volunteer;
   }
 );

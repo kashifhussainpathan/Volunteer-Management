@@ -58,11 +58,13 @@ const editVolunteer = async (volunteerId, editedVolunteer) => {
   try {
     const updatedVolunteer = await Volunteer.findByIdAndUpdate(
       volunteerId,
-      editedVolunteer
+      editedVolunteer,
+      { new: true }
     ).populate({
       path: "events",
       select: "name location",
     });
+    console.log(updatedVolunteer);
     if (updatedVolunteer) {
       console.log("Updated volunteer:", updatedVolunteer);
       return updatedVolunteer;

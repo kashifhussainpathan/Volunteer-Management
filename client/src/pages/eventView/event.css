@@ -1,0 +1,26 @@
+.event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.event-details {
+  text-align: center;
+}
+
+.add-Event {
+  margin-bottom: 1.5rem;
+}
+
+.event-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.event-details-buttons {
+  display: flex;
+  gap: 0.5rem;
+}

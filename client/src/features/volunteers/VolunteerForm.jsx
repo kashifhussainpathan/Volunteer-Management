@@ -36,7 +36,8 @@ const VolunteerForm = () => {
           updatedVolunteer: volunteerInput,
         })
       );
-      //   navigate(`/volunteers/${volunteer._id}`);
+      dispatch(setShowVolunteerForm(false));
+      navigate(`/volunteers/${volunteer._id}`);
     } else {
       dispatch(
         addVolunteerAsync({
@@ -60,7 +61,6 @@ const VolunteerForm = () => {
 
   return (
     <div className="page">
-      <h2>{volunteer ? "Edit" : "Add"} Volunteer</h2>
       <form onSubmit={handleSubmit}>
         <label>Volunteer Name:</label>
         <input
@@ -102,34 +102,37 @@ const VolunteerForm = () => {
           }
           required
         />
-        <label>Availability: </label>
-        <input
-          type="radio"
-          name="availability"
-          value={"Yes"}
-          key={"Yes"}
-          defaultChecked={volunteerInput.availability}
-          onChange={(e) =>
-            e.target.checked &&
-            setVolunteerInput({ ...volunteerInput, availability: true })
-          }
-        />{" "}
-        Yes
-        <input
-          type="radio"
-          name="availability"
-          value={"No"}
-          key={"No"}
-          defaultChecked={!volunteerInput.availability}
-          onChange={(e) =>
-            e.target.checked &&
-            setVolunteerInput({
-              ...volunteerInput,
-              availability: false,
-            })
-          }
-        />{" "}
-        No
+        <label>
+          Availability:
+          <input
+            type="radio"
+            name="availability"
+            value={"Yes"}
+            key={"Yes"}
+            defaultChecked={volunteerInput.availability}
+            onChange={(e) =>
+              e.target.checked &&
+              setVolunteerInput({ ...volunteerInput, availability: true })
+            }
+          />{" "}
+          Yes
+          <input
+            type="radio"
+            name="availability"
+            value={"No"}
+            key={"No"}
+            defaultChecked={!volunteerInput.availability}
+            onChange={(e) =>
+              e.target.checked &&
+              setVolunteerInput({
+                ...volunteerInput,
+                availability: false,
+              })
+            }
+          />{" "}
+          No
+        </label>
+
         <label>Areas of Interest: </label>
         <input
           placeholder="Separated by commas"
