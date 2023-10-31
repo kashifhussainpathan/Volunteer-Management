@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { setShowEventForm } from "./EventSlice";
+import { setShowEventForm } from "./eventSlice";
 import { addEventAsync, updateEventAsync } from "../events/eventApi";
 
 const EventForm = () => {

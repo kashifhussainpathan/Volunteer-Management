@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import EventForm from "./EventForm";
-import { setShowEventForm } from "./EventSlice";
+import { setShowEventForm } from "./eventSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const EventList = () => {
